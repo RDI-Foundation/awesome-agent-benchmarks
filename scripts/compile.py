@@ -6,8 +6,10 @@ import argparse
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import random
 import re
 import sys
+import time
 import warnings
 import yaml
 from collections import defaultdict
@@ -54,6 +56,7 @@ def validate(benchmarks):
 
 
 HEADER = """\
+<!-- DO NOT EDIT - this file is auto-generated. See CONTRIBUTING.md to add a benchmark. -->
 # Awesome Agent Benchmarks
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -98,11 +101,12 @@ def github_repo_path(url):
 def fetch_counts(benchmarks):
     """Fetch citation counts (Semantic Scholar) and star counts (GitHub) for all entries.
 
-    Returns {name: {"citations": int, "stars": int, "pub_date": date|None}}.
+    Returns ({name: {"citations": int, "stars": int, "pub_date": date|None}}, ok).
     """
     import requests
 
     counts = {b["name"]: {"citations": 0, "stars": 0, "pub_date": None} for b in benchmarks}
+    ok = True
 
     # --- Semantic Scholar batch ---
     s2_ids = []      # parallel list of S2 paper IDs
@@ -126,14 +130,40 @@ def fetch_counts(benchmarks):
         if api_key:
             headers["x-api-key"] = api_key
 
+        def s2_post_with_retry():
+            last_error = None
+            for attempt in range(4):
+                try:
+                    resp = requests.post(
+                        "https://api.semanticscholar.org/graph/v1/paper/batch",
+                        params={"fields": "citationCount,publicationDate"},
+                        json={"ids": [sid for _, sid in valid_s2]},
+                        headers=headers,
+                        timeout=30,
+                    )
+                    if resp.status_code in (429, 500, 502, 503, 504):
+                        retry_after = resp.headers.get("Retry-After")
+                        if attempt < 3:
+                            delay = 5 * (2 ** attempt) if resp.status_code == 429 else 2 ** attempt
+                            if retry_after:
+                                try:
+                                    delay = max(delay, float(retry_after))
+                                except ValueError:
+                                    pass
+                            delay += random.uniform(0, 0.5)
+                            time.sleep(delay)
+                            continue
+                    resp.raise_for_status()
+                    return resp
+                except requests.RequestException as e:
+                    last_error = e
+                    if attempt >= 3:
+                        break
+                    time.sleep((2 ** attempt) + random.uniform(0, 0.5))
+            raise last_error if last_error is not None else RuntimeError("S2 request failed")
+
         try:
-            resp = requests.post(
-                "https://api.semanticscholar.org/graph/v1/paper/batch",
-                params={"fields": "citationCount,publicationDate"},
-                json={"ids": [sid for _, sid in valid_s2]},
-                headers=headers,
-                timeout=30,
-            )
+            resp = s2_post_with_retry()
             resp.raise_for_status()
             results = resp.json()
             found = 0
@@ -150,17 +180,17 @@ def fetch_counts(benchmarks):
             print(f"S2: got citation counts for {found}/{len(valid_s2)} papers.")
         except Exception as e:
             warnings.warn(f"S2 batch request failed: {e}")
+            ok = False
 
     # --- GitHub GraphQL batch ---
     gh_repos = []  # (name, owner, repo)
     for b in benchmarks:
         links = b.get("links") or {}
-        for url in links.values():
-            path = github_repo_path(url)
-            if path:
-                owner, repo = path.split("/")
-                gh_repos.append((b["name"], owner, repo))
-                break
+        url = links.get("github")
+        path = github_repo_path(url) if url else None
+        if path:
+            owner, repo = path.split("/")
+            gh_repos.append((b["name"], owner, repo))
 
     token = os.environ.get("GITHUB_TOKEN")
     if gh_repos and not token:
@@ -202,8 +232,9 @@ def fetch_counts(benchmarks):
             print(f"GitHub: got star counts for {found}/{len(gh_repos)} repos.")
         except Exception as e:
             warnings.warn(f"GitHub GraphQL request failed: {e}")
+            ok = False
 
-    return counts
+    return counts, ok
 
 
 
@@ -227,7 +258,10 @@ def generate(fetch=False):
 
     if fetch:
         print("Fetching citation and star counts...")
-        counts = fetch_counts(benchmarks)
+        counts, ok = fetch_counts(benchmarks)
+        if not ok:
+            print("Metadata fetch failed; aborting without writing README.", file=sys.stderr)
+            sys.exit(1)
     else:
         counts = {b["name"]: {"citations": 0, "stars": 0, "pub_date": None} for b in benchmarks}
 
