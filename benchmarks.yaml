@@ -3,7 +3,7 @@
     Evaluates agents in dual-control settings where both the agent and user modify shared state, exposing coordination and communication failures.
   category: general capabilities
   links:
-    paper: https://arxiv.org/pdf/2506.07982
+    paper: https://arxiv.org/abs/2506.07982
     github: https://github.com/sierra-research/tau2-bench
     website: https://taubench.com
     agentbeats: https://agentbeats.dev/agentbeater/tau2-bench
@@ -42,15 +42,693 @@
   links:
     paper: https://arxiv.org/abs/2307.13854
     github: https://github.com/web-arena-x/webarena
-    website: https://webarena.dev
+    website: https://webarena.dev/og/
 
 - name: SWE-bench
   description: >-
-    Evaluates agents' ability to resolve real GitHub issues by editing codebases, drawn from 2294 issues across 12 Python repositories.
+    Evaluates agents' ability to resolve real GitHub issues by editing codebases, drawn from 2,294 issues across 12 Python repositories.
   category: coding
   links:
     paper: https://arxiv.org/abs/2310.06770
     github: https://github.com/SWE-bench/SWE-bench
     website: https://www.swebench.com
 
+- name: CyberGym
+  description: >-
+    Evaluates agents on real-world vulnerability analysis by tasking them with generating proof-of-concept tests for known vulnerabilities given a natural language description and codebase. Covers 1,507 vulnerabilities across 188 open-source projects.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2506.02548
+    github: https://github.com/sunblaze-ucb/cybergym
+    website: https://www.cybergym.io/
 
+- name: Mind2Web
+  description: >-
+    Evaluates generalist web agents on 2,000+ tasks across 137 websites and 31 domains.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2306.06070
+    github: https://github.com/OSU-NLP-Group/Mind2Web
+    website: https://osu-nlp-group.github.io/Mind2Web
+
+- name: Agent-SafetyBench
+  description: >-
+    Evaluates the safety of LLM agents across 8 categories of safety risks and 10 failure modes, covering 349 interaction environments and 2,000 test cases.
+  category: safety
+  links:
+    paper: https://arxiv.org/abs/2412.14470
+    github: https://github.com/thu-coai/Agent-SafetyBench
+    dataset: https://huggingface.co/datasets/thu-coai/Agent-SafetyBench
+
+- name: AgentAuditor
+  description: >-
+    Benchmarks LLM-based evaluators on detecting safety risks and security threats in agent interactions, covering 2,293 annotated records across 15 risk types and 29 application scenarios.
+  category: safety
+  links:
+    paper: https://arxiv.org/abs/2506.00641
+    github: https://github.com/Astarojth/AgentAuditor
+
+- name: MCP-SafetyBench
+  description: >-
+    Evaluates safety of LLMs using the Model Context Protocol across 5 domains with a taxonomy of 20 MCP attack types spanning server, host, and user sides.
+  category: safety
+  links:
+    paper: https://arxiv.org/abs/2512.15163
+    github: https://github.com/xjzzzzzzzz/MCPSafety
+    website: https://xjzzzzzzzz.github.io/mcpsafety.github.io/
+
+- name: Agent Security Bench
+  description: >-
+    Evaluates attacks and defenses of LLM-based agents across 10 scenarios, 10 agent types, over 400 tools, and 27 attack and defense methods.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2410.02644
+    github: https://github.com/agiresearch/ASB
+    website: https://luckfort.github.io/ASBench/
+
+- name: MEMTRACK
+  description: >-
+    Evaluates long-term memory and state tracking in multi-platform agent environments, testing memory acquisition, selection, and conflict resolution across realistic organizational workflows spanning Slack, Linear, and Git.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2510.01353
+
+- name: Evo-Memory
+  description: >-
+    A streaming benchmark for evaluating self-evolving memory in LLM agents across 10 diverse datasets, requiring agents to search, adapt, and update memory after each interaction.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2511.20857
+
+- name: Mem2ActBench
+  description: >-
+    Evaluates whether agents can proactively leverage long-term memory to execute tool-based actions, covering 2,029 sessions across 400 tool-use tasks.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2601.19935
+
+- name: LongMemEval
+  description: >-
+    Benchmarks chat assistants on five long-term memory abilities - information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention - using 500 questions embedded in scalable chat histories.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2410.10813
+    github: https://github.com/xiaowu0162/LongMemEval
+    website: https://web.cs.ucla.edu/~kwchang/bibliography/wu2025longmemeval/
+
+- name: CAIBench
+  description: >-
+    A modular meta-benchmark for evaluating LLMs and agents across offensive and defensive cybersecurity domains, integrating over 10,000 instances across Jeopardy CTFs, Attack-Defense CTFs, Cyber Range exercises, and knowledge assessments.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2510.24317
+    github: https://github.com/aliasrobotics/cai/tree/main/benchmarks
+
+- name: SEC-bench
+  description: >-
+    Evaluates LLM agents on authentic security engineering tasks - proof-of-concept generation and vulnerability patching - using an automated pipeline that constructs repositories, reproduces vulnerabilities, and generates gold patches.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2506.11791
+    github: https://github.com/SEC-bench/SEC-bench
+
+- name: BrowserArena
+  description: >-
+    A live open-web agent evaluation platform that collects user-submitted tasks and runs Arena-style head-to-head comparisons with step-level human feedback for LLM web agents.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2510.02418
+    github: https://github.com/sagnikanupam/browserarena
+
+- name: DoomArena
+  description: >-
+    A security evaluation framework for AI agents that tests vulnerabilities across configurable threat models including malicious user and malicious environment scenarios, integrated with BrowserGym and tau-bench.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2504.14064
+    github: https://github.com/ServiceNow/DoomArena
+
+- name: PaperArena
+  description: >-
+    Evaluates LLM-based agents on questions requiring multi-paper information integration using external tools, with agents achieving only 38.78% average accuracy.
+  category: deep research
+  links:
+    paper: https://arxiv.org/abs/2510.10909
+    github: https://github.com/Melmaphother/PaperArena
+    website: https://paperarena-ai.github.io/
+
+- name: InnovatorBench
+  description: >-
+    Evaluates agents on 20 code-driven LLM research tasks spanning data construction, filtering, augmentation, and model design, paired with the ResearchGym execution environment.
+  category: scientific research
+  links:
+    paper: https://arxiv.org/abs/2510.27598
+    github: https://github.com/GAIR-NLP/InnovatorBench
+    website: https://ai-innovator.opensii.ai/
+
+- name: AstaBench
+  description: >-
+    Evaluates agents on 2,400+ problems spanning the full scientific discovery process across multiple domains, including literature review, experiment replication, data analysis, and research direction proposals.
+  category: scientific research
+  links:
+    paper: https://arxiv.org/abs/2510.21652
+    github: https://github.com/allenai/asta-bench
+
+- name: OSUniverse
+  description: >-
+    Evaluates agents on complex multimodal desktop tasks of increasing difficulty, from basic UI interactions to multistep workflows requiring spatial reasoning and dexterity.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2505.03570
+    github: https://github.com/agentsea/osuniverse
+    website: https://agentsea.github.io/osuniverse/
+
+- name: RE-Bench
+  description: >-
+    Evaluates AI agents on 7 challenging open-ended ML research engineering tasks, benchmarking against human experts across 1,500+ hours of collected human baselines.
+  category: scientific research
+  links:
+    paper: https://arxiv.org/abs/2411.15114
+    github: https://github.com/METR/RE-Bench
+
+- name: MLE-bench
+  description: >-
+    Measures agents on machine learning engineering using 75 competitions from Kaggle, testing skills including model training, dataset preparation, and experiment execution.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2410.07095
+    github: https://github.com/openai/mle-bench
+    website: https://www.mlebench.com/
+
+- name: Mind2Web 2
+  description: >-
+    Evaluates agentic search systems on 130 long-horizon tasks requiring real-time web browsing, information synthesis, and citation-backed answers, using an Agent-as-a-Judge framework.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2506.21506
+    github: https://github.com/OSU-NLP-Group/Mind2Web-2
+    website: https://osu-nlp-group.github.io/Mind2Web-2/
+
+- name: ProjDevBench
+  description: >-
+    Evaluates coding agents on end-to-end project development across 20 programming problems in 8 categories, assessing system architecture design, functional correctness, and iterative solution refinement.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2602.01655
+    github: https://github.com/zsworld6/projdevbench
+
+- name: BEHAVIOR-1K
+  description: >-
+    A comprehensive simulation benchmark for human-centered robotics agents covering 1,000 everyday activities across 50 realistic scenes with over 9,000 annotated objects.
+  category: embodied
+  links:
+    paper: https://arxiv.org/abs/2403.09227
+    github: https://github.com/StanfordVL/BEHAVIOR-1K
+    website: https://behavior.stanford.edu
+
+- name: SWE-rebench
+  description: >-
+    A continuously refreshed benchmark of 21,000+ interactive Python-based software engineering tasks extracted from GitHub repositories, designed to prevent evaluation contamination.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2505.20411
+    website: https://swe-rebench.com
+
+- name: LoCoBench-Agent
+  description: >-
+    Evaluates LLM agents in realistic long-context software engineering workflows, testing multi-turn conversations, tool usage efficiency, error recovery, and architectural consistency across context lengths from 10K to 1M tokens.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2511.13998
+    github: https://github.com/SalesforceAIResearch/LoCoBench-Agent
+
+- name: ALFWorld
+  description: >-
+    A benchmark and simulator bridging abstract text-based planning with embodied visual task execution, enabling agents to learn policies in TextWorld and transfer them to ALFRED visual environments.
+  category: embodied
+  links:
+    paper: https://arxiv.org/abs/2010.03768
+    github: https://github.com/alfworld/alfworld
+    website: https://alfworld.github.io
+
+- name: USACO
+  description: >-
+    Evaluates agents on 307 competitive programming problems from the USA Computing Olympiad, requiring complex algorithmic reasoning, puzzle solving, and efficient code generation.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2404.10952
+    github: https://github.com/princeton-nlp/USACO
+    website: https://princeton-nlp.github.io/USACOBench/
+
+- name: SWE-EVO
+  description: >-
+    Evaluates coding agents on 48 long-horizon software evolution tasks requiring multi-step modifications spanning an average of 21 files, drawn from version histories of 7 mature open-source Python projects.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2512.18470
+
+- name: AppWorld
+  description: >-
+    Evaluates autonomous agents on 750 tasks requiring rich interactive code generation across 9 everyday applications accessible through 457 APIs, testing multi-app coordination and avoidance of unintended side effects.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2407.18901
+    github: https://github.com/StonyBrookNLP/appworld
+    website: https://appworld.dev/
+
+- name: LoCoMo-Plus
+  description: >-
+    Benchmarks cognitive memory in LLM agents under cue-trigger semantic disconnect, testing agents on retaining and applying implicit constraints across long conversational contexts.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2602.10715
+    github: https://github.com/xjtuleeyf/Locomo-Plus
+
+- name: MemoryArena
+  description: >-
+    Evaluates agent memory in multi-session loops across web navigation, preference-constrained planning, progressive information search, and sequential formal reasoning.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2602.16313
+    website: https://memoryarena.github.io/
+
+- name: Spider2-V
+  description: >-
+    Evaluates multimodal agents on 494 real-world data science and engineering tasks across 20 enterprise applications, requiring SQL queries, Python code, and GUI operations.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2407.10956
+    github: https://github.com/xlang-ai/Spider2-V
+    website: https://spider2-v.github.io
+
+- name: MCP-Bench
+  description: >-
+    Evaluates LLMs on realistic multi-step tasks requiring tool use and cross-tool coordination through 28 MCP servers spanning 250 tools across finance, travel, scientific computing, and academic search.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2508.20453
+    github: https://github.com/Accenture/mcp-bench
+    website: https://mcpbench.ai/
+
+- name: AgencyBench
+  description: >-
+    Evaluates autonomous agents on 6 core agentic capabilities across 32 real-world scenarios comprising 138 tasks, each requiring approximately 90 tool calls and 1 million tokens.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2601.11044
+    github: https://github.com/GAIR-NLP/AgencyBench
+    website: https://agencybench.opensii.ai/
+
+- name: UltraHorizon
+  description: >-
+    Measures foundational agent capabilities for long-horizon partially observable tasks, with standard configurations involving 35K+ tokens and 60+ tool calls across exploration environments.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2509.21766
+    github: https://github.com/StarDewXXX/UltraHorizon
+
+- name: Robotouille
+  description: >-
+    Evaluates LLM agents on long-horizon asynchronous kitchen planning scenarios, testing their capacity to manage overlapping tasks, interruptions, and parallel execution.
+  category: embodied
+  links:
+    paper: https://arxiv.org/abs/2502.05227
+    github: https://github.com/portal-cornell/robotouille
+    website: https://portal.cs.cornell.edu/robotouille/
+
+- name: OpenAgentSafety
+  description: >-
+    Evaluates agent behavior across 8 critical risk categories using real tools including web browsers, code execution, file systems, and bash shells across 350+ multi-turn tasks with both benign and adversarial intents.
+  category: safety
+  links:
+    paper: https://arxiv.org/abs/2507.06134
+    github: https://github.com/sani903/OpenAgentSafety
+    dataset: https://huggingface.co/datasets/sani903/openagentsafety
+
+- name: REALM-Bench
+  description: >-
+    Evaluates multi-agent systems on 14 progressively complex real-world planning and scheduling problems featuring multi-agent coordination, inter-dependencies, and dynamic disruptions.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2502.18836
+    github: https://github.com/genglongling/REALM-Bench
+
+- name: DeepPlanning
+  description: >-
+    Evaluates LLM agents on long-horizon planning through multi-day travel planning and shopping tasks requiring proactive information acquisition, local constrained reasoning, and global constrained optimization.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2601.18137
+    website: https://qwenlm.github.io/Qwen-Agent/en/benchmarks/deepplanning/
+
+- name: CRAB
+  description: >-
+    Evaluates multimodal agents on 120 tasks across computer desktop and mobile phone environments using a graph-based fine-grained evaluation method.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2407.01511
+    github: https://github.com/camel-ai/crab
+    website: https://crab.camel-ai.org/
+
+- name: MineAnyBuild
+  description: >-
+    Evaluates agents on spatial planning in Minecraft across 4,000 curated tasks covering spatial understanding, reasoning, creativity, and commonsense, requiring generation of executable architecture building plans.
+  category: embodied
+  links:
+    paper: https://arxiv.org/abs/2505.20148
+    github: https://github.com/MineAnyBuild/MineAnyBuild
+
+- name: GTA
+  description: >-
+    Evaluates LLMs on real-world tool use with 229 tasks using human-written queries, real deployed tools, and authentic multimodal inputs such as images, screenshots, and code files.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2407.08713
+    github: https://github.com/open-compass/GTA
+    website: https://open-compass.github.io/GTA/
+
+- name: Tool Decathlon
+  description: >-
+    Evaluates language agents across 108 tasks spanning 32 software applications and 604 tools, requiring multi-app workflows over approximately 20 interaction turns.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2510.25726
+    github: https://github.com/hkust-nlp/Toolathlon
+    website: https://toolathlon.xyz/
+
+- name: ToolComp
+  description: >-
+    Evaluates multi-step tool-use reasoning with process supervision labels, enabling assessment of both final outcomes and intermediate reasoning steps.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2501.01290
+    github: https://github.com/vaskar-nath/toolcomp
+
+- name: MCP-Universe
+  description: >-
+    Evaluates LLMs on realistic tasks through 11 real-world MCP servers across 6 domains including location navigation, repository management, financial analysis, 3D design, browser automation, and web search.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2508.14704
+    github: https://github.com/SalesforceAIResearch/MCP-Universe
+    website: https://mcp-universe.github.io
+
+- name: OSWorld-MCP
+  description: >-
+    Evaluates computer-use agents on 158 tasks combining MCP tool invocation and GUI operations across 7 common applications in a real-world environment.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2510.24563
+    github: https://github.com/X-PLUG/OSWorld-MCP
+    website: https://osworld-mcp.github.io
+
+- name: tau-bench
+  description: >-
+    Evaluates agents on dynamic conversations with a simulated user in real-world domains, providing domain-specific API tools and policy guidelines across retail and airline scenarios.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2406.12045
+    github: https://github.com/sierra-research/tau-bench
+
+- name: UI-CUBE
+  description: >-
+    Evaluates enterprise computer use agents on 226 tasks spanning simple UI interactions and complex workflows in enterprise applications, with multi-resolution testing and automated validation.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2511.17131
+    github: https://github.com/UiPath/uipath_enterprise_benchmark
+    website: https://www.uipath.com/ai/research/ui-cube-benchmark
+
+- name: Online-Mind2Web
+  description: >-
+    Evaluates web agents on 300 diverse realistic tasks spanning 136 websites under conditions that approximate real user settings.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2504.01382
+    github: https://github.com/OSU-NLP-Group/Online-Mind2Web
+    leaderboard: https://huggingface.co/spaces/osunlp/Online_Mind2Web_Leaderboard
+
+- name: BrowseComp-Plus
+  description: >-
+    Evaluates deep-research agents using a fixed curated document corpus, enabling controlled experiments on retrieval methods, citation accuracy, and context engineering.
+  category: deep research
+  links:
+    paper: https://arxiv.org/abs/2508.06600
+    github: https://github.com/texttron/BrowseComp-Plus
+    website: https://texttron.github.io/BrowseComp-Plus/
+
+- name: SCUBA
+  description: >-
+    Evaluates computer-use agents on CRM workflows within Salesforce across 300 tasks spanning three personas - platform administrators, sales representatives, and service agents.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2509.26506
+    github: https://github.com/SalesforceAIResearch/SCUBA
+    website: https://sfrcua.github.io/SCUBA/
+
+- name: WebArena-Verified
+  description: >-
+    A curated, version-controlled set of 812 web agent tasks with deterministic evaluators supporting offline evaluation via network trace replay, eliminating LLM-based judging.
+  category: web
+  links:
+    github: https://github.com/ServiceNow/webarena-verified
+    website: https://servicenow.github.io/webarena-verified/
+
+- name: WebArena-Infinity
+  description: >-
+    Generates realistic browser environments with verifiable tasks at scale using a multi-agent pipeline that builds, audits, and hardens web applications from static artifacts such as user manuals and recorded workflows. The initial release includes 10 environments, 1,260 verifiable tasks, and 2,070 successful browser-agent trajectories.
+  category: web
+  date: 2026-03-01
+  links:
+    github: https://github.com/web-arena-x/webarena-infinity
+    website: https://webarena.dev/webarena-infinity/
+
+- name: SciCode
+  description: >-
+    Evaluates agents on generating code to solve 80 real scientific research problems decomposed into 338 subproblems across 16 natural science fields including math, physics, chemistry, biology, and materials science.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2407.13168
+    github: https://github.com/scicode-bench/SciCode
+
+- name: OmniACT
+  description: >-
+    Evaluates agents on generating executable programs to complete computer tasks across desktop and web applications, using both text and visual UI understanding.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2402.17553
+    dataset: https://huggingface.co/datasets/Writer/omniact
+
+- name: MMDeepResearch-Bench
+  description: >-
+    Evaluates multimodal deep research agents on 140 expert-crafted tasks across 21 domains, assessing citation-rich report synthesis where models must connect visual artifacts to sourced claims.
+  category: deep research
+  links:
+    paper: https://arxiv.org/abs/2601.12346
+    github: https://github.com/AIoT-MLSys-Lab/MMDeepResearch-Bench
+    website: https://mmdeepresearch-bench.github.io/
+
+- name: DeepScholar-Bench
+  description: >-
+    A live benchmark for generative research synthesis evaluating systems that retrieve from the live web and produce long-form cited reports, assessed on knowledge synthesis, retrieval quality, and verifiability.
+  category: deep research
+  links:
+    paper: https://arxiv.org/abs/2508.20033
+    github: https://github.com/guestrin-lab/deepscholar-bench
+    website: https://sky.cs.berkeley.edu/project/deepscholar-bench/
+
+- name: GAIA
+  description: >-
+    Evaluates general AI assistants on 466 real-world questions requiring reasoning, multi-modality handling, web browsing, and tool-use proficiency, with humans scoring 92% vs. 15% for GPT-4 with plugins.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2311.12983
+    website: https://huggingface.co/gaia-benchmark
+
+- name: Gaia2
+  description: >-
+    Measures general agent capabilities in dynamic, asynchronous environments requiring agents to handle ambiguities, adapt to noise, collaborate with other agents, and operate under temporal constraints.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2509.17158
+    github: https://github.com/facebookresearch/meta-agents-research-environments
+    website: https://facebookresearch.github.io/meta-agents-research-environments/
+
+- name: HCAST
+  description: >-
+    Evaluates AI agents on 189 tasks across ML engineering, cybersecurity, software engineering, and general reasoning, using human baselines collected over 1,500+ hours to calibrate difficulty.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2503.17354
+    github: https://github.com/METR/hcast-public
+
+- name: DeepResearch Bench
+  description: >-
+    Evaluates deep research agents on 100 PhD-level research tasks across 22 fields crafted by domain experts, assessing report quality and information retrieval effectiveness.
+  category: deep research
+  links:
+    paper: https://arxiv.org/abs/2506.11763
+    github: https://github.com/Ayanami0730/deep_research_bench
+    website: https://deepresearch-bench.github.io/
+
+- name: MobileWorld
+  description: >-
+    Evaluates autonomous mobile agents on 201 tasks across 20 applications in agent-user interactive and MCP-augmented environments, emphasizing long-horizon cross-application workflows.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2512.19432
+
+- name: BrowseComp
+  description: >-
+    Evaluates web browsing agents on 1,266 questions requiring persistent navigation to find entangled hard-to-locate information with short, verifiable answers.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2504.12516
+    github: https://github.com/openai/simple-evals
+
+- name: API-Bank
+  description: >-
+    Evaluates LLMs on planning, retrieving, and calling APIs across 73 tools and 314 annotated tool-use dialogues containing 753 API calls.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2304.08244
+    github: https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/api-bank
+
+- name: WebChoreArena
+  description: >-
+    Evaluates web browsing agents on 532 tedious real-world tasks focusing on massive memory requirements, mathematical calculations, and long-term memory across multiple webpages.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2506.01952
+    github: https://github.com/WebChoreArena/WebChoreArena
+    website: https://webchorearena.github.io/
+
+- name: LoCoMo
+  description: >-
+    Benchmarks long-term memory in language models across question answering, event summarization, and multimodal dialogue tasks using conversations spanning up to 35 sessions and 9K tokens on average.
+  category: memory
+  links:
+    paper: https://arxiv.org/abs/2402.17753
+    github: https://github.com/snap-research/locomo
+    website: https://snap-research.github.io/locomo/
+
+- name: Commit0
+  description: >-
+    Evaluates AI agents on writing complete software libraries from scratch given specification documents and interactive unit test suites.
+  category: coding
+  links:
+    paper: https://arxiv.org/abs/2412.01769
+    github: https://github.com/commit-0/commit0
+    website: https://commit-0.github.io/
+
+- name: CRMArena
+  description: >-
+    Evaluates AI agents on realistic customer service tasks across 9 task types and 3 personas using 16 industrial CRM objects with interconnected data simulating enterprise environments.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2411.02305
+    github: https://github.com/SalesforceAIResearch/CRMArena
+
+- name: OS-Harm
+  description: >-
+    Evaluates safety of computer use agents on 150 tasks spanning three harm categories - deliberate user misuse, prompt injection attacks, and model misbehavior.
+  category: safety
+  links:
+    paper: https://arxiv.org/abs/2506.14866
+    github: https://github.com/tml-epfl/os-harm
+
+- name: WASP
+  description: >-
+    Evaluates end-to-end security of web agents against prompt injection attacks in realistic scenarios, with attacks partially succeeding in up to 86% of cases.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2504.18575
+    github: https://github.com/facebookresearch/wasp
+
+- name: MT-AgentRisk
+  description: >-
+    Evaluates multi-turn tool-using agent safety, revealing that attack success rates increase by approximately 16% in multi-turn settings compared to single-turn baselines.
+  category: safety
+  links:
+    paper: https://arxiv.org/abs/2602.13379
+    github: https://github.com/CHATS-lab/ToolShield
+    website: https://unsafer-in-many-turns.github.io/
+
+- name: ExCyTIn-Bench
+  description: >-
+    Evaluates LLM agents on cyber threat investigation through 589 security questions derived from investigation graphs built from 8 simulated attacks across 57 log tables in an Azure environment.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2507.14201
+    github: https://github.com/microsoft/SecRL
+    website: https://www.microsoft.com/en-us/security/blog/2025/10/14/microsoft-raises-the-bar-a-smarter-way-to-measure-ai-for-cybersecurity/
+
+- name: CVE-Bench
+  description: >-
+    Evaluates LLM agents on exploiting real-world web application vulnerabilities based on critical-severity CVEs, with state-of-the-art agents resolving approximately 13% of vulnerabilities.
+  category: security
+  links:
+    paper: https://arxiv.org/abs/2503.17332
+    github: https://github.com/uiuc-kang-lab/cve-bench
+
+- name: AndroidWorld
+  description: >-
+    A dynamic benchmarking environment for autonomous agents on 116 programmatic tasks across 20 real-world Android apps, with tasks parameterized and expressed in natural language.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2405.14573
+    github: https://github.com/google-research/android_world
+
+- name: WideSearch
+  description: >-
+    Evaluates agent reliability on large-scale information collection through 200 manually curated questions across 15+ domains requiring agents to gather and organize atomic verifiable information.
+  category: deep research
+  links:
+    paper: https://arxiv.org/abs/2508.07999
+    github: https://github.com/ByteDance-Seed/WideSearch
+    website: https://widesearch-seed.github.io
+
+- name: WorkArena
+  description: >-
+    Evaluates agents on 33 knowledge worker tasks using the ServiceNow enterprise platform, measuring ability to handle realistic workplace software workflows.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2403.07718
+    github: https://github.com/ServiceNow/WorkArena
+    website: https://servicenow.github.io/WorkArena/
+
+- name: AssistantBench
+  description: >-
+    Evaluates web agents on 214 realistic time-consuming tasks that can be automatically evaluated across different scenarios and domains, with no model exceeding 26% accuracy.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2407.15711
+    github: https://github.com/oriyor/assistantbench
+    website: https://assistantbench.github.io/
+
+- name: VisualWebArena
+  description: >-
+    Evaluates multimodal web agents on realistic visually grounded web tasks, requiring agents to process image-text inputs and execute actions on websites.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2401.13649
+    github: https://github.com/web-arena-x/visualwebarena
+    website: https://jykoh.com/vwa
+
+- name: WorkArena++
+  description: >-
+    Evaluates LLMs and vision-language models on 682 realistic enterprise workflow tasks requiring planning, problem-solving, logical reasoning, retrieval, and contextual understanding within ServiceNow.
+  category: computer use
+  links:
+    paper: https://arxiv.org/abs/2407.05291
+    github: https://github.com/ServiceNow/WorkArena
+    website: https://www.servicenow.com/research/publication/leo-boisvert-work-neurips-datasets2024.html
+
+- name: WebShop
+  description: >-
+    Evaluates agents on navigating and shopping in a simulated e-commerce environment with 1.18 million real-world products and 12,087 crowd-sourced text instructions.
+  category: web
+  links:
+    paper: https://arxiv.org/abs/2207.01206
+    github: https://github.com/princeton-nlp/webshop
+    website: https://webshop-pnlp.github.io
