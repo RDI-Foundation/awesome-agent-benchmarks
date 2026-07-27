@@ -732,3 +732,13 @@
     paper: https://arxiv.org/abs/2207.01206
     github: https://github.com/princeton-nlp/webshop
     website: https://webshop-pnlp.github.io
+
+- name: ClawBench
+  description: >-
+    Evaluates AI web agents on 303 real-world tasks across 144 live websites, with isolated browser execution and multi-layer traces covering screenshots, actions, HTTP traffic, and agent messages.
+  category: web
+  date: 2026-04-11
+  links:
+    paper: https://arxiv.org/abs/2604.08523
+    github: https://github.com/reacher-z/ClawBench
+    website: https://claw-bench.com/
