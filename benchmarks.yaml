@@ -715,6 +715,16 @@
     github: https://github.com/web-arena-x/visualwebarena
     website: https://jykoh.com/vwa
 
+- name: ClawBench
+  description: >-
+    Evaluates browser and computer-use agents on 283 real-world tasks across 163 live websites, with request interception and five execution-evidence layers including browser actions, screenshots, recordings, HTTP requests, and agent messages.
+  category: web
+  date: 2026-04-09
+  links:
+    paper: https://arxiv.org/abs/2604.08523
+    github: https://github.com/TIGER-AI-Lab/ClawBench
+    website: https://claw-bench.com
+
 - name: WorkArena++
   description: >-
     Evaluates LLMs and vision-language models on 682 realistic enterprise workflow tasks requiring planning, problem-solving, logical reasoning, retrieval, and contextual understanding within ServiceNow.
