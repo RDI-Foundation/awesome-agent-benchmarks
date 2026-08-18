@@ -44,6 +44,16 @@
     github: https://github.com/web-arena-x/webarena
     website: https://webarena.dev/og/
 
+- name: ClawBench
+  description: >-
+    Evaluates browser agents across 283 V1+V2 tasks on 163 live websites, capturing replay, screenshots, actions, HTTP traffic, and agent messages with submission interception and judge-based outcome scoring.
+  category: web
+  date: 2026-04-11
+  links:
+    paper: https://arxiv.org/abs/2604.08523
+    github: https://github.com/TIGER-AI-Lab/ClawBench
+    website: https://claw-bench.com/
+
 - name: SWE-bench
   description: >-
     Evaluates agents' ability to resolve real GitHub issues by editing codebases, drawn from 2,294 issues across 12 Python repositories.
