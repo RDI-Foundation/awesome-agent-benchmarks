@@ -732,3 +732,10 @@
     paper: https://arxiv.org/abs/2207.01206
     github: https://github.com/princeton-nlp/webshop
     website: https://webshop-pnlp.github.io
+
+- name: Personal Agent Bench
+  description: >-
+    Evaluates personal AI assistants on repeatable simulated errands and publishes task-completion rates with uncertainty intervals and sample sizes, alongside runtime teardowns. Operated by Zentor, whose own products are excluded from the scorecard.
+  category: general capabilities
+  links:
+    website: https://personalagentbench.com/benchmarks/
