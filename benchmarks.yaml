@@ -732,3 +732,13 @@
     paper: https://arxiv.org/abs/2207.01206
     github: https://github.com/princeton-nlp/webshop
     website: https://webshop-pnlp.github.io
+
+- name: EC²-Bench (EC2-Bench)
+  description: >-
+    Evaluates edge-cloud collaboration in long-horizon agent execution on 128 executable digital-workspace tasks (100 with privacy annotations), scoring each run jointly on task performance, cloud cost, and privacy exposure. Compares query routing, per-step routing, edge-controlled delegation, and edge-controlled advisory between an edge model and a cloud model.
+  category: general capabilities
+  links:
+    paper: https://arxiv.org/abs/2610.17816
+    github: https://github.com/OpenBMB/EC2-Bench
+    website: https://passionate11.github.io/ec2-bench-project-page/
+    dataset: https://huggingface.co/datasets/chengpingan/EC2-Bench
