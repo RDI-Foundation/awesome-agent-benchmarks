@@ -732,3 +732,11 @@
     paper: https://arxiv.org/abs/2207.01206
     github: https://github.com/princeton-nlp/webshop
     website: https://webshop-pnlp.github.io
+
+- name: Next-Gen CAPTCHAs
+  description: Evaluates web GUI agents on interactive CAPTCHA puzzles across 27 families.
+  category: web
+  date: 2026-02-09
+  links:
+    paper: https://arxiv.org/abs/2602.09012
+    github: https://github.com/MetaAgentX/NextGen-CAPTCHAs
