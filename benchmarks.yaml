@@ -732,3 +732,14 @@
     paper: https://arxiv.org/abs/2207.01206
     github: https://github.com/princeton-nlp/webshop
     website: https://webshop-pnlp.github.io
+
+- name: TraceDance
+  description: >-
+    Constructs behavior-specific agent benchmarks from real deployment traces based on natural-language behavior descriptions.
+    Evaluates a model's next turn at recorded decision points for actions, failure handling, and evidence-supported claims without executing generated actions or replaying the environment.
+  category: general capabilities
+  date: 2026-09-27
+  links:
+    paper: https://arxiv.org/abs/2609.33295
+    github: https://github.com/ZhishanQ/TraceDance
+    website: https://zhishanq.github.io/TraceDance/
