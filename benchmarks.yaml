@@ -398,6 +398,15 @@
     paper: https://arxiv.org/abs/2505.20148
     github: https://github.com/MineAnyBuild/MineAnyBuild
 
+- name: The PokéAgent Challenge
+  description: >-
+    Evaluates agents on competitive Pokémon battles and long-horizon RPG speedrunning, stressing partial observability, game-theoretic reasoning, generalization, and long-context planning.
+  category: embodied
+  links:
+    paper: https://arxiv.org/abs/2603.15563
+    github: https://github.com/PokeAgent/pokeagent
+    website: https://pokeagentchallenge.com
+
 - name: GTA
   description: >-
     Evaluates LLMs on real-world tool use with 229 tasks using human-written queries, real deployed tools, and authentic multimodal inputs such as images, screenshots, and code files.
